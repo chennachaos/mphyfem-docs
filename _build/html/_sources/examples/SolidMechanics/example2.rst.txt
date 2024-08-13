@@ -1,6 +1,0 @@
-Example 2 - Cook's membrane in 2D with Neo-Hookean material
-============================================================
-
-In this example, we simulate the benchmark example of Cook's membrane in plane-strain condition with incompressible Neo-Hookean material.
-
-
