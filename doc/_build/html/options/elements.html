@@ -60,19 +60,24 @@
 <p class="caption" role="heading"><span class="caption-text">options:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Element types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#solid-mechanics">Solid Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#incompressiblfe-fluid-flows">Incompressiblfe fluid flows</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#d-elements">2D elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">3D elements</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#magneto-mechanics">Magneto Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#solid-mechanics">Solid Mechanics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">2D elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">3D elements</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#growth-morphoelasticity">Growth (Morphoelasticity)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#magneto-mechanics">Magneto Mechanics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id4">2D elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">3D elements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#growth-morphoelasticity">Growth (Morphoelasticity)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2D elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">3D elements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#electro-mechanics">Electro Mechanics</a></li>
@@ -114,11 +119,105 @@
              
   <section id="element-types">
 <h1>Element types<a class="headerlink" href="#element-types" title="Link to this heading"></a></h1>
+<section id="incompressiblfe-fluid-flows">
+<h2>Incompressiblfe fluid flows<a class="headerlink" href="#incompressiblfe-fluid-flows" title="Link to this heading"></a></h2>
+<p>The list of available element types is provided below along with a brief descrption and the options for each element.</p>
+<p>The formulation uses primitive variables, velocity and pressure using the mixed formulation.</p>
+<section id="d-elements">
+<h3>2D elements<a class="headerlink" href="#d-elements" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>P2/P1</strong></dt><dd><ul>
+<li><p>A Taylor-Hood element.</p></li>
+<li><p>P2 - Six-noded triangular element - for velocity.</p></li>
+<li><p>P1 - Three-noded triangular element - for pressure.</p></li>
+<li><p>Pressure is continuous across elements.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Q2/Q1</strong></dt><dd><ul>
+<li><p>A Taylor-Hood element.</p></li>
+<li><p>Q2 - Nine-noded quadrilateral element - for velocity.</p></li>
+<li><p>Q1 - Four-noded quadrilateral element - for pressure.</p></li>
+<li><p>Pressure is continuous across element boundaries.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>P2b/P1dc</strong></dt><dd><ul>
+<li><p>Crouziex-Raviart element. Naming is ambiguous.</p></li>
+<li><p>P2b  - Seven-noded triangular element (P2 with a cubic bubble at the centroid) - for velocity.</p></li>
+<li><p>P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.</p></li>
+<li><p>Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>P3/P1dc</strong></dt><dd><ul>
+<li><p>P3   - Ten-noded triangular element - for velocity.</p></li>
+<li><p>P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.</p></li>
+<li><p>Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.</p></li>
+<li><p>Better accuracy than the P2b/P1 element.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h3>3D elements<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>P2/P1</strong></dt><dd><ul>
+<li><p>A Taylor-Hood element.</p></li>
+<li><p>P2 - 10-noded tetrahedral element for velocity.</p></li>
+<li><p>P1 - 4-noded tetrahedral element for pressure.</p></li>
+<li><p>Pressure is continuous across elements.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Q2/Q1</strong></dt><dd><ul>
+<li><p>A Taylor-Hood element.</p></li>
+<li><p>Q2 - 27-noded hexahedral element for velocity.</p></li>
+<li><p>Q1 - 8-noded hexahedral element for pressure.</p></li>
+<li><p>Pressure is continuous across element boundaries.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>P2b/P1dc</strong></dt><dd><ul>
+<li><p>P2b  - 11-noded tetrahedral element (P2 with a cubic bubble at the centroid) for velocity.</p></li>
+<li><p>P1dc - 4-noded tetrahedral element, element-wise linear and discontinuous pressure.</p></li>
+<li><p>Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>P3/P1dc</strong></dt><dd><ul>
+<li><p>P3   - 20-noded tetrahedral element for velocity.</p></li>
+<li><p>P1dc - 4-noded tetrahedral element, element-wise linear and discontinuous pressure.</p></li>
+<li><p>Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.</p></li>
+<li><p>Better accuracy than the P2b/P1 element.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
 <section id="solid-mechanics">
 <h2>Solid Mechanics<a class="headerlink" href="#solid-mechanics" title="Link to this heading"></a></h2>
 <p>The list of available element types is provided below along with a brief descrption and the options for each element.</p>
-<section id="d-elements">
-<h3>2D elements<a class="headerlink" href="#d-elements" title="Link to this heading"></a></h3>
+<section id="id2">
+<h3>2D elements<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>ELEM_SOLID_2D_DISP</strong></dt><dd><ul>
@@ -169,8 +268,8 @@
 </li>
 </ul>
 </section>
-<section id="id1">
-<h3>3D elements<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="id3">
+<h3>3D elements<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>ELEM_SOLID_3D_DISP</strong></dt><dd><ul>
@@ -228,8 +327,8 @@
 <li><p>Hard magnetic (HM) materials: the magnetic field is specified as the residual and applied magnetic fields in the input.</p></li>
 <li><p>Soft magnetic (SM) materials: the magnetic field is solved as the solution along with the displacements.</p></li>
 </ul>
-<section id="id2">
-<h3>2D elements<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="id4">
+<h3>2D elements<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>ELEM_MAGNMECH_2D_HM_10</strong></dt><dd><ul>
@@ -257,8 +356,8 @@
 </li>
 </ul>
 </section>
-<section id="id3">
-<h3>3D elements<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<section id="id5">
+<h3>3D elements<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>ELEM_MAGNMECH_3D_HM_10</strong></dt><dd><ul>
@@ -289,8 +388,8 @@
 </section>
 <section id="growth-morphoelasticity">
 <h2>Growth (Morphoelasticity)<a class="headerlink" href="#growth-morphoelasticity" title="Link to this heading"></a></h2>
-<section id="id4">
-<h3>2D elements<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>2D elements<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>ELEM_GROWTH_2D_MIXED21</strong></dt><dd><ul>
@@ -302,8 +401,8 @@
 </li>
 </ul>
 </section>
-<section id="id5">
-<h3>3D elements<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id7">
+<h3>3D elements<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>ELEM_GROWTH_3D_MIXED21</strong></dt><dd><ul>

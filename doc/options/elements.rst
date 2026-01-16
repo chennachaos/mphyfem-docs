@@ -3,6 +3,59 @@ Element types
 ==============
 
 
+Incompressiblfe fluid flows
+----------------------------
+The list of available element types is provided below along with a brief descrption and the options for each element.
+
+The formulation uses primitive variables, velocity and pressure using the mixed formulation.
+
+2D elements
+^^^^^^^^^^^
+* **P2/P1**
+    * A Taylor-Hood element.
+    * P2 - Six-noded triangular element - for velocity.
+    * P1 - Three-noded triangular element - for pressure.
+    * Pressure is continuous across elements.
+* **Q2/Q1**
+    * A Taylor-Hood element.
+    * Q2 - Nine-noded quadrilateral element - for velocity.
+    * Q1 - Four-noded quadrilateral element - for pressure.
+    * Pressure is continuous across element boundaries.
+* **P2b/P1dc**
+    * Crouziex-Raviart element. Naming is ambiguous.
+    * P2b  - Seven-noded triangular element (P2 with a cubic bubble at the centroid) - for velocity.
+    * P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.
+    * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
+* **P3/P1dc**
+    * P3   - Ten-noded triangular element - for velocity.
+    * P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.
+    * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
+    * Better accuracy than the P2b/P1 element.
+
+3D elements
+^^^^^^^^^^^
+* **P2/P1**
+    * A Taylor-Hood element.
+    * P2 - 10-noded tetrahedral element for velocity.
+    * P1 - 4-noded tetrahedral element for pressure.
+    * Pressure is continuous across elements.
+* **Q2/Q1**
+    * A Taylor-Hood element.
+    * Q2 - 27-noded hexahedral element for velocity.
+    * Q1 - 8-noded hexahedral element for pressure.
+    * Pressure is continuous across element boundaries.
+* **P2b/P1dc**
+    * P2b  - 11-noded tetrahedral element (P2 with a cubic bubble at the centroid) for velocity.
+    * P1dc - 4-noded tetrahedral element, element-wise linear and discontinuous pressure.
+    * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
+* **P3/P1dc**
+    * P3   - 20-noded tetrahedral element for velocity.
+    * P1dc - 4-noded tetrahedral element, element-wise linear and discontinuous pressure.
+    * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
+    * Better accuracy than the P2b/P1 element.
+
+
+
 Solid Mechanics
 ----------------
 
