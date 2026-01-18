@@ -3,34 +3,56 @@ Element types
 ==============
 
 
-Incompressiblfe fluid flows
-----------------------------
-The list of available element types is provided below along with a brief descrption and the options for each element.
+Incompressible Flows
+---------------------
+The list of available element types is provided below along with a brief descrption.
 
-The formulation uses primitive variables, velocity and pressure using the mixed formulation.
+The formulation uses primitive variables - velocity and pressure.
+
+
 
 2D elements
 ^^^^^^^^^^^
 * **P2/P1**
     * A Taylor-Hood element.
-    * P2 - Six-noded triangular element - for velocity.
-    * P1 - Three-noded triangular element - for pressure.
+    * P2 - Six-noded triangular element for velocity.
+    * P1 - Three-noded triangular element for pressure.
     * Pressure is continuous across elements.
+
+.. figure:: ./figures/element-dofs-P2P1-2D.png
+    :width: 200
+    :align: center
+
 * **Q2/Q1**
     * A Taylor-Hood element.
-    * Q2 - Nine-noded quadrilateral element - for velocity.
-    * Q1 - Four-noded quadrilateral element - for pressure.
+    * Q2 - Nine-noded quadrilateral element for velocity.
+    * Q1 - Four-noded quadrilateral element for pressure.
     * Pressure is continuous across element boundaries.
+
+.. figure:: ./figures/element-dofs-Q2Q1-2D.png
+    :width: 200
+    :align: center
+
 * **P2b/P1dc**
     * Crouziex-Raviart element. Naming is ambiguous.
-    * P2b  - Seven-noded triangular element (P2 with a cubic bubble at the centroid) - for velocity.
+    * P2b  - Seven-noded triangular element (P2 with a cubic bubble at the centroid) for velocity.
     * P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.
     * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
+
+.. figure:: ./figures/element-dofs-P2bP1dc-2D.png
+    :width: 200
+    :align: center
+
 * **P3/P1dc**
-    * P3   - Ten-noded triangular element - for velocity.
+    * P3   - Ten-noded triangular element for velocity.
     * P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.
     * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
     * Better accuracy than the P2b/P1 element.
+
+.. figure:: ./figures/element-dofs-P3P1dc-2D.png
+    :width: 200
+    :align: center
+
 
 3D elements
 ^^^^^^^^^^^
@@ -39,20 +61,39 @@ The formulation uses primitive variables, velocity and pressure using the mixed 
     * P2 - 10-noded tetrahedral element for velocity.
     * P1 - 4-noded tetrahedral element for pressure.
     * Pressure is continuous across elements.
+
+.. figure:: ./figures/element-dofs-P2P1-3D.png
+    :width: 200
+    :align: center
+
 * **Q2/Q1**
     * A Taylor-Hood element.
     * Q2 - 27-noded hexahedral element for velocity.
     * Q1 - 8-noded hexahedral element for pressure.
     * Pressure is continuous across element boundaries.
+
+.. figure:: ./figures/element-dofs-Q2Q1-3D.png
+    :width: 200
+    :align: center
+
 * **P2b/P1dc**
     * P2b  - 11-noded tetrahedral element (P2 with a cubic bubble at the centroid) for velocity.
     * P1dc - 4-noded tetrahedral element, element-wise linear and discontinuous pressure.
     * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
+
+.. figure:: ./figures/element-dofs-P2bP1dc-3D.png
+    :width: 200
+    :align: center
+
 * **P3/P1dc**
     * P3   - 20-noded tetrahedral element for velocity.
     * P1dc - 4-noded tetrahedral element, element-wise linear and discontinuous pressure.
     * Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.
     * Better accuracy than the P2b/P1 element.
+
+.. figure:: ./figures/element-dofs-P3P1dc-3D.png
+    :width: 200
+    :align: center
 
 
 

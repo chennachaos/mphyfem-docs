@@ -35,7 +35,8 @@ The finite element formulation is published in the following papers in
    :hidden:
    :caption: inputformat:
 
-   inputformat/inputfiles
+   inputformat/inputs_Fluidflow
+   inputformat/inputs_SolidMechanics
 
 .. toctree::
    :maxdepth: 2
@@ -44,6 +45,17 @@ The finite element formulation is published in the following papers in
 
    options/elements
    options/materials
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: examples - CFD:
+
+   examples/CFD/Example1/example1
+   examples/CFD/Example2/example2
+   examples/CFD/Example3/example3
+   examples/CFD/Example4/example4
+
 
 .. toctree::
    :maxdepth: 2

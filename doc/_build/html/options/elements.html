@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Material types" href="materials.html" />
-    <link rel="prev" title="Simulation case" href="../inputformat/inputfiles.html" /> 
+    <link rel="prev" title="Inputs for solid mechanics problems" href="../inputformat/inputs_SolidMechanics.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,16 +51,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">inputformat:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputfiles.html">Simulation case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputfiles.html#mesh-file">Mesh file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputfiles.html#config-file">Config file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputfiles.html#comments">Comments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputfiles.html#data-blocks">Data blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputs_Fluidflow.html">Inputs for incompressible flow problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inputformat/inputs_SolidMechanics.html">Inputs for solid mechanics problems</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">options:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Element types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#incompressiblfe-fluid-flows">Incompressiblfe fluid flows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#incompressible-flows">Incompressible Flows</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#d-elements">2D elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">3D elements</a></li>
 </ul>
@@ -84,6 +81,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="materials.html">Material types</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">examples - CFD:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/CFD/Example1/example1.html">Example 1 - Lid-driven cavity in 2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/CFD/Example2/example2.html">Example 2 - Steady flow past a cylinder in 2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/CFD/Example3/example3.html">Example 1 - Lid-driven cavity in 2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/CFD/Example4/example4.html">Example 1 - Lid-driven cavity in 2D</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">examples - Solid Mechanics:</span></p>
 <ul>
@@ -119,46 +123,61 @@
              
   <section id="element-types">
 <h1>Element types<a class="headerlink" href="#element-types" title="Link to this heading"></a></h1>
-<section id="incompressiblfe-fluid-flows">
-<h2>Incompressiblfe fluid flows<a class="headerlink" href="#incompressiblfe-fluid-flows" title="Link to this heading"></a></h2>
-<p>The list of available element types is provided below along with a brief descrption and the options for each element.</p>
-<p>The formulation uses primitive variables, velocity and pressure using the mixed formulation.</p>
+<section id="incompressible-flows">
+<h2>Incompressible Flows<a class="headerlink" href="#incompressible-flows" title="Link to this heading"></a></h2>
+<p>The list of available element types is provided below along with a brief descrption.</p>
+<p>The formulation uses primitive variables - velocity and pressure.</p>
 <section id="d-elements">
 <h3>2D elements<a class="headerlink" href="#d-elements" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>P2/P1</strong></dt><dd><ul>
 <li><p>A Taylor-Hood element.</p></li>
-<li><p>P2 - Six-noded triangular element - for velocity.</p></li>
-<li><p>P1 - Three-noded triangular element - for pressure.</p></li>
+<li><p>P2 - Six-noded triangular element for velocity.</p></li>
+<li><p>P1 - Three-noded triangular element for pressure.</p></li>
 <li><p>Pressure is continuous across elements.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-P2P1-2D.png"><img alt="../_images/element-dofs-P2P1-2D.png" src="../_images/element-dofs-P2P1-2D.png" style="width: 200px;" /></a>
+</figure>
+<ul class="simple">
 <li><dl class="simple">
 <dt><strong>Q2/Q1</strong></dt><dd><ul>
 <li><p>A Taylor-Hood element.</p></li>
-<li><p>Q2 - Nine-noded quadrilateral element - for velocity.</p></li>
-<li><p>Q1 - Four-noded quadrilateral element - for pressure.</p></li>
+<li><p>Q2 - Nine-noded quadrilateral element for velocity.</p></li>
+<li><p>Q1 - Four-noded quadrilateral element for pressure.</p></li>
 <li><p>Pressure is continuous across element boundaries.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-Q2Q1-2D.png"><img alt="../_images/element-dofs-Q2Q1-2D.png" src="../_images/element-dofs-Q2Q1-2D.png" style="width: 200px;" /></a>
+</figure>
+<ul class="simple">
 <li><dl class="simple">
 <dt><strong>P2b/P1dc</strong></dt><dd><ul>
 <li><p>Crouziex-Raviart element. Naming is ambiguous.</p></li>
-<li><p>P2b  - Seven-noded triangular element (P2 with a cubic bubble at the centroid) - for velocity.</p></li>
+<li><p>P2b  - Seven-noded triangular element (P2 with a cubic bubble at the centroid) for velocity.</p></li>
 <li><p>P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.</p></li>
 <li><p>Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-P2bP1dc-2D.png"><img alt="../_images/element-dofs-P2bP1dc-2D.png" src="../_images/element-dofs-P2bP1dc-2D.png" style="width: 200px;" /></a>
+</figure>
+<ul class="simple">
 <li><dl class="simple">
 <dt><strong>P3/P1dc</strong></dt><dd><ul>
-<li><p>P3   - Ten-noded triangular element - for velocity.</p></li>
+<li><p>P3   - Ten-noded triangular element for velocity.</p></li>
 <li><p>P1dc - Three-noded triangular element, element-wise linear and discontinuous pressure.</p></li>
 <li><p>Pressure is discontinuous across elements. Able to capture pressure jumps accurately for immersed thin structures.</p></li>
 <li><p>Better accuracy than the P2b/P1 element.</p></li>
@@ -167,6 +186,9 @@
 </dl>
 </li>
 </ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-P3P1dc-2D.png"><img alt="../_images/element-dofs-P3P1dc-2D.png" src="../_images/element-dofs-P3P1dc-2D.png" style="width: 200px;" /></a>
+</figure>
 </section>
 <section id="id1">
 <h3>3D elements<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
@@ -181,6 +203,11 @@
 </dd>
 </dl>
 </li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-P2P1-3D.png"><img alt="../_images/element-dofs-P2P1-3D.png" src="../_images/element-dofs-P2P1-3D.png" style="width: 200px;" /></a>
+</figure>
+<ul class="simple">
 <li><dl class="simple">
 <dt><strong>Q2/Q1</strong></dt><dd><ul>
 <li><p>A Taylor-Hood element.</p></li>
@@ -191,6 +218,11 @@
 </dd>
 </dl>
 </li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-Q2Q1-3D.png"><img alt="../_images/element-dofs-Q2Q1-3D.png" src="../_images/element-dofs-Q2Q1-3D.png" style="width: 200px;" /></a>
+</figure>
+<ul class="simple">
 <li><dl class="simple">
 <dt><strong>P2b/P1dc</strong></dt><dd><ul>
 <li><p>P2b  - 11-noded tetrahedral element (P2 with a cubic bubble at the centroid) for velocity.</p></li>
@@ -200,6 +232,11 @@
 </dd>
 </dl>
 </li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-P2bP1dc-3D.png"><img alt="../_images/element-dofs-P2bP1dc-3D.png" src="../_images/element-dofs-P2bP1dc-3D.png" style="width: 200px;" /></a>
+</figure>
+<ul class="simple">
 <li><dl class="simple">
 <dt><strong>P3/P1dc</strong></dt><dd><ul>
 <li><p>P3   - 20-noded tetrahedral element for velocity.</p></li>
@@ -211,6 +248,9 @@
 </dl>
 </li>
 </ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/element-dofs-P3P1dc-3D.png"><img alt="../_images/element-dofs-P3P1dc-3D.png" src="../_images/element-dofs-P3P1dc-3D.png" style="width: 200px;" /></a>
+</figure>
 </section>
 </section>
 <section id="solid-mechanics">
@@ -424,7 +464,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../inputformat/inputfiles.html" class="btn btn-neutral float-left" title="Simulation case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../inputformat/inputs_SolidMechanics.html" class="btn btn-neutral float-left" title="Inputs for solid mechanics problems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="materials.html" class="btn btn-neutral float-right" title="Material types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
