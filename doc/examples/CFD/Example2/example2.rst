@@ -1,14 +1,15 @@
 
-Example 2 - Steady flow past a cylinder in 2D
-==============================================
+Example 2 - Steady flow past a cylinder in 2D - Turek benchmark
+================================================================
 
-In this example, we simulate steady flow past a circular cylinder for a Reynolds number of 20.
+In this example, we simulate steady flow past a circular cylinder for a Reynolds number of 20. This is the `Test case 2D-1` of the paper `Benchmark Computations of Laminar Flow Around a Cylinder <https://wwwold.mathematik.tu-dortmund.de/lsiii/cms/papers/SchaeferTurek1996.pdf>`_ by Schafer and Turek.
+
 
 .. figure:: Turekcylinder2d-P2-mesh.png
     :width: 600
     :align: center
 
-    Mesh used for the simulation. P2/P1 element is used.
+    Mesh used for the simulation. P2/P1 element is used. Donwload :download:`Turekcylinder2d-P2.msh <Turekcylinder2d-P2.msh>`.
 
 
 The configuration file is shown below.
@@ -18,7 +19,7 @@ The configuration file is shown below.
 
     Files
     {
-      mesh:  turekcylinder2d-P2
+      mesh:  Turekcylinder2d-P2
     }
     
     Fluid Properties

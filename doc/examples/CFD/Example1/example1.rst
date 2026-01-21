@@ -4,11 +4,12 @@ Example 1 - Lid-driven cavity in 2D
 
 In this example, we simulate the benchmark example of lid-driven cavity for a Reynolds number of 1000.
 
+
 .. figure:: LDC-P2-mesh3-mesh.png
     :width: 300
     :align: center
 
-    Mesh used for the simulation. P2/P1 element is used.
+    Mesh used for the simulation. P2/P1 element is used. Donwload :download:`LDC-P2-mesh3.msh <LDC-P2-mesh3.msh>`.
 
 
 The configuration file is shown below.

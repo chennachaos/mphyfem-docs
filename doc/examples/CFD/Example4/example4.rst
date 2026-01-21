@@ -1,5 +1,5 @@
 
-Example 4 - Steady flow past a cylinder in 3D
+Example 4 - Steady flow past a cylinder in 3D 
 ==============================================
 
 In this example, we simulate steady flow past a circular cylinder in 3D for a Reynolds number of 20. This is an extended version of the 2D problem.
@@ -8,7 +8,7 @@ In this example, we simulate steady flow past a circular cylinder in 3D for a Re
     :width: 500
     :align: center
 
-    Mesh used for the simulation. Q2/Q1 element is used.
+    Mesh used for the simulation. Q2/Q1 element is used. Donwload :download:`Turekcylinder3d-Q2-coarsemesh.msh <Turekcylinder3d-Q2-coarsemesh.msh>`.
 
 
 The configuration file is shown below.
@@ -17,7 +17,7 @@ The configuration file is shown below.
 
     Files
     {
-      mesh:  turekcylinder2d-P2
+      mesh:  Turekcylinder3d-Q2-coarsemesh
     }
     
     Fluid Properties
@@ -34,7 +34,7 @@ The configuration file is shown below.
 
     Element Properties
     {
-        type : P2P1
+        type : Q2Q1
     }
 
     Boundary Conditions
@@ -58,6 +58,14 @@ The configuration file is shown below.
             timefunction  :  1
         }
     
+        inlet
+        {
+            type          :  specified
+            dof           :  Zvelocity
+            value         :  0.0
+            timefunction  :  1
+        }
+
         bottomedge
         {
             type     :  wall
@@ -72,6 +80,21 @@ The configuration file is shown below.
         {
             type     :  wall
         }
+
+        front
+        {
+            type          :  specified
+            dof           :  Zvelocity
+            value         :  0.0
+        }
+    
+        back
+        {
+            type          :  specified
+            dof           :  Zvelocity
+            value         :  0.0
+        }
+
     }
 
 
@@ -100,7 +123,7 @@ The configuration file is shown below.
     
       finalTime          :  2.0
     
-      timeStep           :  0.1
+      timeStep           :  0.2
     
       maximumSteps       :  10000
     
