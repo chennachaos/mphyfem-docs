@@ -17,7 +17,7 @@ The configuration file is shown below.
 
     Files
     {
-      mesh:  Turekcylinder3d-Q2-coarsemesh
+      mesh : Turekcylinder3d-Q2-coarsemesh
     }
     
     Fluid Properties

@@ -19,7 +19,7 @@ The configuration file is shown below.
 
     Files
     {
-      mesh:  Turekcylinder2d-P2
+      mesh : Turekcylinder2d-P2
     }
     
     Fluid Properties
