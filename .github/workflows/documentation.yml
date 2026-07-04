@@ -1,6 +1,11 @@
 name: documentation
 
-on: [push, pull_request, workflow_dispatch]
+#on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches:
+      - mkdocs
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -9,12 +14,13 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
       - name: Mkdocs build
         run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files mkdocs-material
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/mkdocs'
         run: mkdocs gh-deploy --force
 
